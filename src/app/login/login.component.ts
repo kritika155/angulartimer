@@ -6,21 +6,31 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-i:any;
+name:any={};
+arr:any;
   constructor() { }
 
   ngOnInit()
    {
-            console.log("ngOnInitlogin");
-            function a()
-            {
-              for(this.i=1;this.i<=100;this.i++)
-                  {
-                    console.log(this.i);
-                  }
-            }
+            console.log("on ngOnInit login");
+            this.name="kritika";
+            this.arr=[0,1,2,3];
+            console.log(JSON.stringify(this.arr));
             
-            setTimeout(a,2000);
+            var i=0;
+            (
+              function a()
+              {
+                if(i++>100)
+                return;
+                setTimeout(function()
+                {document.write(i+"<br/>");
+                a();
+              },2000);
+            })();
+                
+          
+          
   }
 
 }
