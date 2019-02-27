@@ -17,14 +17,15 @@ arr:any;
             this.arr=[0,1,2,3];
             console.log(JSON.stringify(this.arr));
             
-            var i=0;
+            var i=1;
             (
               function a()
               {
-                if(i++>100)
+                if(i>100)
                 return;
                 setTimeout(function()
                 {document.write(i+"<br/>");
+                i++;
                 a();
               },2000);
             })();
